@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/web2020?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Chongqing&useSSL=false
+      username: py
+      password: 123
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none

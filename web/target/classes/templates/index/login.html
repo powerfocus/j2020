@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <form th:action="@{/login}" method="post" th:object="${userModel}">
+                    <!--<ul>
+                        <li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
+                    </ul>-->
+                    <div class="">
+                        <label for="username">用户名</label>
+                        <input name="username" id="username" type="text" th:field="*{username}" />
+                        <p style="color: red;" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+                    </div>
+                    <div>
+                        <label for="pwd">密码</label>
+                        <input name="pwd" id="pwd" type="password" th:field="*{pwd}" />
+                        <p style="color: red;" th:if="${#fields.hasErrors('pwd')}" th:errors="*{pwd}"></p>
+                    </div>
+                    <div>
+                        <label for="info">内容</label>
+                        <textarea name="info" id="info" cols="30" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="提交" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

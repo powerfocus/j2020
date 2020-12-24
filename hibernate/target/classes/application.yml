@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/hibernate?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+      username: py
+      password: 123
