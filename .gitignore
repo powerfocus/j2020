@@ -1,0 +1,6 @@
+/.idea/
+/db/target/
+/hibernate/target
+/ssgHibernate/target
+/mybatis/target
+/web/target
