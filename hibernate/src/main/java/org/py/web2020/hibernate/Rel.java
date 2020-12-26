@@ -17,7 +17,8 @@ public class Rel {
         SimpleJavaFileObject javaFileObject = new JavaSourceFromString(className, source);
 
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        StandardJavaFileManager fileManager = compiler.getStandardFileManager(new DiagnosticCollector<>(), null, null);
+        StandardJavaFileManager fileManager = compiler.getStandardFileManager(new DiagnosticCollector<>(),
+                null, null);
         JavaCompiler.CompilationTask task = compiler.getTask(null, fileManager, null,
                 Arrays.asList("-d", "hibernate/target/classes/"), null, Arrays.asList(javaFileObject));
         if (task.call()) {
@@ -27,7 +28,7 @@ public class Rel {
             Method sayHiMethod = obj.getClass().getMethod(methodName);
             System.out.println(sayHiMethod.invoke(obj));
         } else {
-            System.out.println("类生成失败");
+            throw new IllegalStateException("类创建失败！");
         }
         fileManager.close();
     }
