@@ -7,10 +7,12 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 public class Rel {
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, IOException {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException,
+            IllegalAccessException, InvocationTargetException, InstantiationException, IOException {
         String className = "Hello";
         String methodName = "sayHello";
-        String source = "public class Hello {public Hello() {System.out.println(\"这是一个代码生成的类 默认构造函数\");} public String sayHello() {return \"这是一个自动生成的类！\";} " +
+        String source = "public class Hello {public Hello() {System.out.println(\"这是一个代码生成的类 默认构造函数\");}" +
+                " public String sayHello() {return \"这是一个自动生成的类！\";} " +
                 "@Override public String toString() {return \"这是一个自动生成的类！\";}}";
         SimpleJavaFileObject javaFileObject = new JavaSourceFromString(className, source);
 
